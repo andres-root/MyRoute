@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{%block title %} Rutas|{{sistema.Nombre_sistema}} {% endblock %}
+
+{% block content %} <br>
+
+<H2> |Rutas|</H2>
+
+
+<div id="seccion_media">
+
+<br>
+
+Presione sobre el siguiente listado la ruta de la que desea se despliegue informacion:
+<br><br>
+:X:D:°:¬| Modulo en construcción, Pendiente mostrar lista de  estaciones donde para la ruta
+
+        <table class="table table-hover" id = "lista_rutas">
+                        <theader>
+                                <tr>
+                                        <th>Ruta</th>
+                                        <th>Tipo</th>
+                                        <th>Horario</th>
+                                 </tr>
+                         </theader>
+
+
+        </table>
+
+
+
+<br><br>
+
+<a href="{%url 'vista_inicial'%}" class="btn btn-large" >VOLVER</a>
+
+
+</div>
+
+<script type="text/javascript">
+
+                $(document).on('ready',function(){
+                        $.ajax({
+                                type:"GET",
+                                contentType:"application/json; charset=utf-8",
+                                dateType:"json",
+                                url:"/ws/Rutas/",
+                                success:function(response){
+                                        var i = 0;
+                                        for(i;i<=(response.length-1);i++){
+					var ruta=response[i].pk
+						subestaciones(ruta,i);
+					$('#lista_rutas').append("<tbody><tr onclick='on("+i+","+response.length+");' class='warning'><td>"+ response[i].pk+"</td><td>"+ response[i].fields.tipo +"</td><td>"+ response[i].fields.horario +"</td></tr><tr id='"+i+"' style='display:none;'><td> <div><pre id='informacion'><div id='encabezado_info'> <h2>Ruta "+response[i].pk+" </h2></div><div id='cuerpo_info'><br><br><l style='font-weight: bold;'>Tipo:</l> "+ response[i].fields.tipo +" <br><l style='font-weight: bold;'><br>Cant. paradas:</l> "+ response[i].fields.nroparadas +" <l style='font-weight: bold;'>      Horario:</l> "+ response[i].fields.horario +"<br><br><l style='font-weight: bold;'>Paradas:</l> <br> <table id ='subtabla_estaciones"+i+"'><theader><tr><th>Estacion</th><th>Direccion</th></tr></theader></table> </div></pre></div></td><td><img src='/media/images/icon_cancelar.png' width='50' Onclick='off("+i+");'></td></tr></tbody>");
+
+
+                                        }
+
+                                }
+                        });
+                });
+
+
+</script>
+
+
+{% endblock%}
+

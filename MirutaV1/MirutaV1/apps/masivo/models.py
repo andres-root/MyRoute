@@ -1,0 +1,35 @@
+from django.db			 import models
+from MirutaV1.apps.home.models	 import Sistema 
+
+
+class Ruta(models.Model):
+	sistema 	= models.ForeignKey(Sistema)	
+	nombre		= models.CharField(max_length=200,primary_key=True)
+	nroparadas	= models.IntegerField()
+	tipo		= models.CharField(max_length=50)
+	horario		= models.CharField(max_length=50)
+	
+	def __unicode__(self):
+		return self.nombre
+
+
+class Estacion(models.Model):
+	sistema		= models.ForeignKey(Sistema)
+	nombre		= models.CharField(max_length=200,primary_key=True)
+	nrorutas	= models.IntegerField()
+	direccion	= models.CharField(max_length=100)
+	tiporutas	= models.CharField(max_length=50)
+
+	def __unicode__(self):
+		return self.nombre
+
+class Paradas(models.Model):
+	nombre_ruta	= models.ForeignKey(Ruta)
+	nombre_estacion = models.ForeignKey(Estacion)
+	orden		= models.IntegerField()
+	destino		= models.CharField(max_length=10)
+	minutos_next	= models.IntegerField()	
+
+	def __unicode__(self):
+		val = "%s %s"%(self.nombre_ruta,self.nombre_estacion)
+		return val

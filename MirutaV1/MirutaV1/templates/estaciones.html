@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{%block title %} Estaciones|{{sistema.Nombre_sistema}} {% endblock %}
+
+{% block content %} <br>
+
+<H2> Estaciones </H2>
+
+<div id="seccion_media">
+
+<br>
+
+Presione sobre el siguiente listado la estacion de la cual desea se despliegue informacion:
+<br><br>
+:X:D:°:¬| Modulo en construcción: Pendiente cargar las rutas en los cuadros informativos de las estaciones.
+
+
+	<table class="table table-hover" id = "lista_estaciones">
+        	        <theader>
+                	        <tr>
+                        	        <th>Estacion</th>
+                                	<th>Nro. Rutas</th>
+                                	<th>Direccion</th>
+                  		 </tr>
+             		 </theader>
+
+
+	</table>
+
+
+<br><br>
+
+<a href="{%url 'vista_inicial'%}" class="btn btn-large" >VOLVER</a>
+
+
+</div>
+
+
+<script type="text/javascript">
+
+                $(document).on('ready',function(){
+                        $.ajax({
+                                type:"GET",
+                                contentType:"application/json; charset=utf-8",
+                                dateType:"json",
+                                url:"/ws/Estaciones/",
+                                success:function(response){
+                                        var i = 0;
+                                        for(i;i<=(response.length-1);i++){
+						var estacion=response[i].pk
+						subrutas(estacion,i);
+                                                $('#lista_estaciones').append("<tbody><tr onclick='on("+i+","+response.length+");' class='warning'><td>"+ response[i].pk +"</td><td>"+ response[i].fields.nrorutas +"</td><td>"+ response[i].fields.direccion +"</td></tr><tr id='"+i+"' style='display:none;'><td> <div><pre id='informacion'><div id='encabezado_info'> <h2>Estacion "+response[i].pk+" </h2></div><div id='cuerpo_info'><br><br><l style='font-weight: bold;'>Direccion:</l> "+ response[i].fields.direccion +" <br><br><l style='font-weight: bold;'>Tipo de rutas:</l> "+ response[i].fields.tiporutas +" <l style='font-weight: bold;'>      Nro. Rutas:</l> "+ response[i].fields.nrorutas +"<br><br><l style='font-weight: bold;'>Rutas:</l><br>  <table id ='subtabla_rutas"+i+"'><theader><tr><th>Ruta</th><th>Prox Parada</th></tr></theader></table></div></pre></div></td><td><img src='/media/images/icon_cancelar.png' width='50' Onclick='off("+i+");'></td></tr></tbody>");
+					
+					}
+
+                                        
+                                } 
+                        });
+                });
+
+
+
+</script>
+
+
+{% endblock%}
+

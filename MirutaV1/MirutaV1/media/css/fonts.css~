@@ -1,0 +1,6 @@
+@font-face{
+	font-family:Xposed;
+	src:url(Xposed.ttf);
+}
+
+

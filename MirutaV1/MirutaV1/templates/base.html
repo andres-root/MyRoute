@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+
+
+
+<head>
+        <meta charset="urtf-8">
+        <TITLE>{% block title %}Titulo Base {% endblock %}</TITLE>
+	<link rel="stylesheet" href="/media/css/fonts.css">
+        <link rel="stylesheet" href="/media/css/index.css">
+        <link rel="stylesheet" href="/media/bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="/media/bootstrap/css/bootstrap-responsive.css">
+        <style type="text/css">
+                body{
+                        padding-top:60px;
+                        padding-bottom: 40px;
+			
+                }
+                .sidebar-nav{
+                        padding: 9px 0;
+                }
+        </style>
+        <script src="/media/js/jquery.js"></script>  
+
+</head>
+
+
+<body>
+
+
+
+
+
+  <div class="container-fluid"> 
+<header>
+        <h1>MyRute | {{sistema.Nombre_sistema}}<h1>
+</header>     
+   </div>          
+
+
+
+
+
+<nav>
+<div class="span3">
+	<ul class="nav nav-list">
+	        <li class="active"><a href="#"><h3> {{sistema.Nombre_sistema}}</h3></a></li><br>
+		<li id="subnav"><a href="{% url 'vista_inicial' %}"><i class="icon-search"></i> Mi ruta</a></li>
+	        <li id="subnav"><a href="{% url 'vista_rutas' %}"><i class="icon-road"></i> Rutas</a></li>
+	        <li id="subnav"><a href="{% url 'vista_estaciones' %}"><i class="icon-home"></i> Estaciones</a></li>
+		<li id="subnav"><a href="#"><i class="icon-heart"></i> About Us</a></li>
+	        <li id="subnav"><a href="#" ><i class="icon-user"></i> Iniciar sesión</a></li>
+		
+        </ul>
+
+<br>
+<div id="nota">
+Nota del desarrollador:
+<p> 
+	Bienvenido a la aplicación Web "MyRute", aun estamos en proceso de desarrollo pero esperamos que pueda disfrutar de las opciones que hasta el momento hemos liberado
+	y encuentre la ruta que mas le convenga de una forma sencilla y facil de entender.
+</p>
+<div>
+</div>
+</nav>
+
+
+
+
+
+
+
+
+
+<section>    <div class="container-fluid">
+                <div class="row-fluid">
+                        <div class="span9">
+                                <div id="hero">
+                                        {%block content%}
+
+                                    {%endblock%}
+                                </div>
+                        <!--/div-->
+                </div>
+               
+        </div>
+
+</section>
+
+
+
+
+
+
+<br><br><br>
+     
+
+
+<footer>
+                <p>&copy; Proyecto transporte masivo 2013- Cristal eye developments</p>
+</footer>
+
+
+        <script src="/media/js/jquery.js"></script>
+        <script src="/media/bootstrap/js/bootstrap.js"></script>
+	<script src="/media/js/code.js"></script>
+	
+</body>
+</html>
+

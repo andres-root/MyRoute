@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{%block title %} Ruta Manual | {{sistema.Nombre_sistema}} {% endblock %}
+
+{% block content %} <br>
+
+<div id="seccion_media">
+<br>
+<p>
+	<h4>Que MyRute guie tu camino...</h4>
+</p>
+
+<br>
+
+<br>
+<p>Estación inicio:
+<select id="estacion_inicio" name="estacion_inicio" size=1>
+	
+</select>   
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+Estación destino:
+<select id="estacion_fin" name="estacion_fin" size=1 >  
+
+</select></p>
+
+<br><br>
+
+
+<div id="Result_rutas">
+</div>
+
+<br><br>
+
+<l class="btn btn-link"  onclick="mejor_ruta_manual($('#estacion_inicio').val(),$('#estacion_fin').val());"><img src="/media/images/icon_aceptar.svg" class="btn" width=50px></l> 
+<a href="{%url 'vista_inicial'%}" class="btn btn-link"><img src="/media/images/icon_cancelar.png" class="btn" width=50px></a>
+
+</div>
+
+
+
+<script type="text/javascript">
+
+                $(document).on('ready',function(){
+                        $.ajax({
+                                type:"GET",
+                                contentType:"application/json; charset=utf-8",
+                                dateType:"json",
+                                url:"/ws/Estaciones/",
+                                success:function(response){
+                                        var i = 0;
+                                        for(i;i<=(response.length-1);i++){
+                                                $('#estacion_inicio').append("<option value = '"+ response[i].pk +"'>"+response[i].pk+"</option>");
+                                                $('#estacion_fin').append("<option value = '"+ response[i].pk + "'>"+response[i].pk+"</option>");
+
+                                        }
+                                }
+                        });
+                });
+
+
+</script>
+
+{% endblock%}
+

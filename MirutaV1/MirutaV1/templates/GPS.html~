@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{%block title %} GPS | {{sistema.Nombre_sistema}} {% endblock %}
+
+{% block content %} <br>
+
+<h2>Selección ruta por GPS | {{sistema.Nombre_sistema}}</h2>
+
+<div id="seccion_media">
+<br>
+<p>Aqui van los resultados del GPS</p>
+<br>
+<p>Seleccione la estacion destino:</p>
+<select id="estacion_fin" name="estacion_fin" size=1 ></select>
+
+<br><br>
+
+<a href=# class="btn btn-link"><img src="/media/images/icon_aceptar.svg" class="btn" width=50px></a>
+<a href="{%url 'vista_inicial'%}" class="btn btn-link"><img src="/media/images/icon_cancelar.png" class="btn" width=50px></a>
+
+</div>
+
+
+<script type="text/javascript">
+
+                $(document).on('ready',function(){
+                        $.ajax({
+                                type:"GET",
+                                contentType:"application/json; charset=utf-8",
+                                dateType:"json",
+                                url:"/ws/Estaciones/",
+                                success:function(response){
+                                        var i = 0;
+                                        for(i;i<=(response.length-1);i++){
+                                                $('#estacion_fin').append("<option value = "+ response[i].fields.nombre + ">"+response[i].fields.nombre+"</option>");
+
+                                        }
+                                }
+                        });
+                });
+
+
+</script>
+
+
+
+{%endblock%}
+

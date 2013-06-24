@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{%block title %} Ruta Manual {{sistema.Nombre_sistema}} {% endblock %}
+
+{% block content %} <br>
+
+
+<div id="seccion_media">
+<br>
+<p>Seleccione la estacion mas cercana:</p>
+<select name="estacion_inicio" size=1>
+	
+</select>
+<p>Seleccione la estacion destino:</p>
+                                <div id="estacion_inicio">
+                                     
+
+                                </div>
+
+<select name="estacion_fin" size=1 >
+        <div id="selector_estaciones">
+        </div>
+
+</select>
+
+<br><br>
+
+<a href=# class="btn btn-link"><img src="/media/images/icon_aceptar.svg" class="btn" width=50px></a> 
+<a href="{%url 'vista_inicial'%}" class="btn btn-link"><img src="/media/images/icon_cancelar.png" class="btn" width=50px></a>
+
+</div>
+
+
+
+<script type="text/javascript">
+                $(document).on('ready',function(){
+                        $.ajax({
+                                type:"GET",
+                                contentType:"application/json; charset=utf-8",
+                                dateType:"json",
+                                url:"/ws/Estaciones/",
+                                success:function(response){
+                                        $.each(da)
+                                                $('#estacion_inicio').append("<option>"+response[i].fields.nombre+"</option>");
+                                        }
+                                }
+                        });
+                });
+</script>
+
+{% endblock%}
+
