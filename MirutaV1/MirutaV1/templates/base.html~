@@ -99,10 +99,13 @@ Nota del desarrollador:
 
 <footer>
                 <p>&copy; Proyecto transporte masivo 2013- Cristal eye developments</p>
+
+		<!--Licencia Creative Commons -->
+		<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.es"><img alt="Licencia Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">MyRute</span> por <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Diego Fernando Sevillano Cardona</span> se encuentra bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.es">Licencia Creative Commons Atribución-CompartirIgual 3.0 Unported</a>.
+
 </footer>
 
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
-<script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+
         <script src="/media/js/jquery.js"></script>
         <script src="/media/bootstrap/js/bootstrap.js"></script>
 	<script src="/media/js/code.js"></script>
