@@ -92,5 +92,21 @@ header{
 
 /*----------Estilo_Base-end-------------------------------------------------*/
 
+/*----------Resultados -----------------------------------------------------*/
 
+#Result_rutas{
+	margin-left:0%;
+	margin-right:40%;
+	margin-top:5%;
+	margin-bottom:10%;
+
+	padding-top: 5%;
+	padding-left: 5%;
+	padding-bottom: 10%;
+	padding-right: 10%;
+
+	background-color: white;
+}
+
+/*----------Resultados -end-------------------------------------------------*/
 
