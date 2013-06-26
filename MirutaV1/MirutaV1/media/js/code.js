@@ -130,20 +130,21 @@ function mejor_ruta_manual(est1,est2){
 					var num_time = 0;
 					var mejor_ruta;
 					rutas=calcular_rutas(est1,est2,response);
-					var str="";
+					var str="<table class='table table-hover' ><theader><tr><th>Accion</th><th>Ruta</th><th>Estacion</th></tr></theader><tbody>";
 					
 					for(var i=0;i<rutas.length;i++){//alert(rutas[i].id);
 						
 						if(rutas[i].ruta.ruta2 == "")
-							str+="<br> "+rutas[i].ruta.ruta1;
-						else
-							str+="<br> Aborde la ruta "+rutas[i].ruta.ruta1+" descienda en la estación "+rutas[i].ruta.estacion+" y aborde la ruta "+rutas[i].ruta.ruta2;
-
+							str+="<tr> <td>Abordar</td> <td> "+rutas[i].ruta.ruta1+"</td><td>"+est1+"</td></tr><tr> <td>Descender</td> <td> "+rutas[i].ruta.ruta1+"</td><td>"+est2+"</td></tr>";
+						else{
+								str+="<tr></tr>";
+								str+="<tr> <td>Abordar</td> <td>"+rutas[i].ruta.ruta1+" </td><td>"+est1+"</td></tr><tr> <td>Transbordar</td><td>"+rutas[i].ruta.ruta2+" </td><td> "+rutas[i].ruta.estacion+" </td></tr><tr> <td>Descender</td> <td> "+rutas[i].ruta.ruta2+"</td><td>"+est2+"</td></tr> ";
+							}
 					}
 					
+					str+="</tbody></table>";
 					
-					
-
+				
 
 					// Calculamos tiempos NOTA:MODIFICAR ESTA PARTE, YA NO CALCULAMOS TIEMPOS, AHORA ORGANIZAMOS ARREGLO DE MENOR A MAYOR TIEMPO
 					
@@ -162,9 +163,9 @@ function mejor_ruta_manual(est1,est2){
 						}						
 					}
 
-				/*	$('#Result_rutas').ap;pend("Rutas posibles: "+str + " <br> La mejor ruta es: "+mejor_ruta.ruta.ruta1)*/
+					//$('#Result_rutas').append("Rutas posibles: "+str + " <br> La mejor ruta es: "+mejor_ruta.ruta.ruta1);
 									
-					document.getElementById("Result_rutas").innerHTML="Rutas posibles: "+str + " <br> La mejor ruta es: "+mejor_ruta.ruta.ruta1;
+					document.getElementById("Result_rutas").innerHTML="Rutas posibles: <br><br>"+str + " <br> La mejor ruta es: "+mejor_ruta.ruta.ruta1;
 				}
 	});
 		
