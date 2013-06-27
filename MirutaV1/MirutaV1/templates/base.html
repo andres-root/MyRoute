@@ -7,28 +7,26 @@
 <head>
         <meta charset="urtf-8">
         <TITLE>{% block title %}Titulo Base {% endblock %}</TITLE>
-	<link rel="stylesheet" href="/media/css/fonts.css">
-        <link rel="stylesheet" href="/media/css/index.css">
+	    <link rel="stylesheet" href="/media/css/fonts.css">        
         <link rel="stylesheet" href="/media/bootstrap/css/bootstrap.css">
         <link rel="stylesheet" href="/media/bootstrap/css/bootstrap-responsive.css">
+        <link rel="stylesheet" href="/media/css/index.css">
         <style type="text/css">
                 body{
-                        padding-top:60px;
-                        padding-bottom: 40px;
+                        padding-top: 10%;
+                        padding-bottom: 8%;
+                        padding-left: 5%;
+                        padding-right: 5%;
 			
                 }
-                .sidebar-nav{
-                        padding: 9px 0;
-                }
+                
         </style>
         <script src="/media/js/jquery.js"></script>  
 
 </head>
 
-
 <body>
-
-
+<div class="span12">
 
 
 
@@ -41,7 +39,7 @@
 
 
 
-
+<div class="row-fluid">
 <nav>
 <div class="span3">
 	<ul class="nav nav-list">
@@ -73,8 +71,8 @@ Nota del desarrollador:
 
 
 
-<section>    <div class="container-fluid">
-                <div class="row-fluid">
+<section>    
+                
                         <div class="span9">
                                 <div id="hero">
                                         {%block content%}
@@ -82,34 +80,34 @@ Nota del desarrollador:
                                     {%endblock%}
                                 </div>
                         <!--/div-->
-                </div>
+                
                
-        </div>
-
-</section>
+        
 
 
+</section> 
 
+</div>
 
-
-
-<br><br><br>
-     
 
 
 <footer>
-                <p>&copy; Proyecto transporte masivo 2013- Cristal eye developments</p>
 
-		<!--Licencia Creative Commons -->
-		<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.es"><img alt="Licencia Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">MyRute</span> por <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Diego Cardona</span> se encuentra bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.es">Licencia Creative Commons Atribución-CompartirIgual 3.0 Unported</a>.
+    
+           	<!--Licencia Creative Commons -->
+		      <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.es"><img alt="Licencia Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">MyRute</span> por <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Diego Cardona</span> se encuentra bajo una <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.es">Licencia Creative Commons Atribución-CompartirIgual 3.0 Unported</a>.
+
+
+
+   
 
 </footer>
-
-
-        <script src="/media/js/jquery.js"></script>
-        <script src="/media/bootstrap/js/bootstrap.js"></script>
+</div><!-- Cierra span12 que engloba todo el Body-->
+    <script src="/media/js/jquery.js"></script>
+    <script src="/media/bootstrap/js/bootstrap.js"></script>
 	<script src="/media/js/code.js"></script>
 	
 </body>
+
 </html>
 

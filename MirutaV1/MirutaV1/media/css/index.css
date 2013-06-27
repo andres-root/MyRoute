@@ -44,12 +44,7 @@
 	
 }
 
-.span3{
-	/*background-color:gray;*/
-	border-radius: 10px solid;
-	border-color: blue;
-	
-}
+
 
 header{
 	font-family:Brody;
@@ -64,12 +59,13 @@ header{
 	background: linear-gradient(to bottom, rgba(30,87,153,1) 0%,rgba(41,137,216,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-8 */
 	color:mintcream;
-	margin-left:0.7%;
+	/*margin-left:0.7%;
 	margin-right:7.6%;
 	margin-top:0%;
-	margin-bottom:0%;
+	margin-bottom:0%;*/
 	padding-top: 5%;
 	padding-bottom: 5%;
+	margin-right: 30px;
 	text-align:center;
 }
 
@@ -83,6 +79,7 @@ header{
 	padding-left: 2%;
 	padding-bottom: 5%;
 	padding-right: 5%;
+	margin-bottom: 0%;
 }
 
 #nota{	font-family:enervate;
@@ -108,5 +105,40 @@ header{
 	background-color: white;
 }
 
+footer{
+	text-align: center;
+	margin-top: 0%;
+	margin-right: 30px;
+	background-color: lightblue;
+}
+
+
 /*----------Resultados -end-------------------------------------------------*/
 
+/*----------Ediciones codigo bootstrap--------------------------------------*/
+
+.container-fluid {
+	padding-left: 0%;
+	padding-top: 0%;
+	padding-right: 0%;
+	padding-bottom: 0%;
+}
+
+.span9{
+	margin-right: 0%;
+	margin-left: 0%;
+	margin-bottom: 0%;
+	margin-top: 0%;
+}
+/*
+.span3{
+	background-color:gray;
+	border-radius: 10px solid;
+	border-color: blue;
+	margin-right: 0%;
+	margin-left: 0%;
+	margin-bottom: 0%;
+	margin-top: 0%;
+	
+}*/
+/*----------Ediciones codigo bootstrap -end---------------------------------*/
